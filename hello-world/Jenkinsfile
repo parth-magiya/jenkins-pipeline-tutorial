@@ -1,13 +1,6 @@
 pipeline {
     agent any 
-    parameters {
-        // The parameters directive provides a list of parameters that a user should provide when triggering the Pipeline. 
-        // The values for these user-specified parameters are made available to Pipeline steps via the params object.
-        string(name: 'Name', defaultValue: 'Parth', description: 'Hello World!')
-        text(name: 'Maths', defaultValue: 'Learning Maths', description: 'Learn Maths')
-        choice(name: 'Select', choices: ['Engineering', 'Architecture', 'Doctor'], description: 'Select Anyone')
-        password(name: 'Password', defaultValue: 'unknown', description: 'Enter a password')
-    }
+    
     
     stages {
         
@@ -17,25 +10,6 @@ pipeline {
             }
         }
         
-        stage('Example') {
-            steps {
-                echo "Hello ${params.Name}"
-                echo "Maths: ${params.Maths}"
-                echo "Select: ${params.Select}"
-                echo "Password: ${params.Password}"
-            }
-        }
-        stage('Admission') {
-            steps {
-                echo 'Fill up the form.'
-            }
-        }
-        stage('Done') {
-            steps {
-                echo 'Successfully done.'
-            }
-        }
-    }
         
         stage('Compile') {
             steps {
