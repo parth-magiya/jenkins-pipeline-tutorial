@@ -10,6 +10,12 @@ pipeline {
             }
         }
         
+        stage('Pracs') {
+            steps {
+                echo 'Done' 
+            }
+        }
+        
         
         stage('Compile') {
             steps {
@@ -33,7 +39,7 @@ pipeline {
         }
         stage('Publish Artifacts') {
             steps {
-                echo 'Save the assemblies generated from the compilation' 
+                echo 'No error' 
             }
         }
     }
